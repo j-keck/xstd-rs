@@ -1,0 +1,25 @@
+name: test and deploy api
+
+on: [push]
+
+jobs:
+  test-and-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+
+      - name: run tests
+        run: cargo test --verbose
+
+      - name: build and deploy api doc
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: target/doc
+          BUILD_SCRIPT: cargo doc
+
