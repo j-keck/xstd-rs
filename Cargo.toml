@@ -6,5 +6,7 @@ authors = ["j-keck <jhyphenkeck@gmail.com>"]
 edition = "2018"
 repository = "https://github.com/j-keck/xstd-rs"
 license = "MIT"
+documentation = "https://j-keck.github.io/xstd-rs/"
+readme = "README.md"
 
 [dependencies]
