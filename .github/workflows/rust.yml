@@ -15,11 +15,10 @@ jobs:
         run: cargo test --verbose
 
       - name: build and deploy api doc
-        uses: JamesIves/github-pages-deploy-action@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: master
-          BRANCH: gh-pages
-          FOLDER: target/doc
-          BUILD_SCRIPT: cargo doc
-
+        run: |
+          cargo doc --no-deps
+          cd target/doc
+          git init
+          git add -A
+          git -c user.name='ci' -c user.email='ci' commit -m 'docs'
+          git push -f -q https://git:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.REPOSITORY }} HEAD:gh-pages
