@@ -16,8 +16,18 @@ jobs:
 
       - name: build and deploy api doc
         run: |
+
           cargo doc --no-deps
+
+          cat > target/doc/index.html <<EOF
+          <!doctype html>
+          <html><head>
+            <meta http-equiv="refresh" content="0; URL='xstd/'" />
+          </head></html>
+          EOF
+
           cd target/doc
+
           git init
           git add -A
           git -c user.name='ci' -c user.email='ci' commit -m 'docs'
