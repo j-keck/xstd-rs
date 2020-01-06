@@ -23,20 +23,25 @@ pub trait UniqueBy: Stream {
 
 impl<T> UniqueBy for T where T: Stream {}
 
+/// Creates a Stream which skips already emitted elements.
+///
 ///
 /// # Examples
 ///
+/// ```
+/// # futures::executor::block_on(async {
 /// use xstd::prelude::*;
 /// use futures::{stream::{self, StreamExt}, executor};
 ///
-/// let stream = stream::iter(vec![3, 1, 3, 2, 1, 4])
-///                  .unique_by(|x| x.clone());
+/// let mut stream = stream::iter(vec![3, 1, 3, 2, 1, 4])
+///                     .unique_by(|x| x.clone());
 ///
-/// assert_eq!(3, stream.next().await);
-/// assert_eq!(1, stream.next().await);
-/// assert_eq!(2, stream.next().await);
-/// assert_eq!(4, stream.next().await);
-///
+/// assert_eq!(Some(3), stream.next().await);
+/// assert_eq!(Some(1), stream.next().await);
+/// assert_eq!(Some(2), stream.next().await);
+/// assert_eq!(Some(4), stream.next().await);
+/// # });
+/// ```
 #[must_use = "streams do nothing unless polled"]
 pub struct Unique<St, F, E> {
     stream: St,
