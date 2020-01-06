@@ -9,4 +9,13 @@ license = "MIT"
 documentation = "https://j-keck.github.io/xstd-rs/"
 readme = "README.md"
 
+[features]
+stream = [ "futures-core", "pin-utils" ]
+
 [dependencies]
+futures-core = { version = "0.3", optional = true }
+pin-utils = { version = "0.1.0-alpha.4", optional = true }
+
+
+[dev-dependencies]
+futures = { version = "0.3", features = [ "executor" ] }
