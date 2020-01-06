@@ -10,6 +10,7 @@ documentation = "https://j-keck.github.io/xstd-rs/"
 readme = "README.md"
 
 [features]
+all = [ "stream" ]
 stream = [ "futures-core", "pin-utils" ]
 
 [dependencies]

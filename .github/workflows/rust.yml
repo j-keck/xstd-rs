@@ -17,7 +17,7 @@ jobs:
       - name: build and deploy api doc
         run: |
 
-          cargo doc --no-deps
+          cargo doc --no-deps --features all
 
           cat > target/doc/index.html <<EOF
           <!doctype html>
