@@ -22,7 +22,7 @@ jobs:
           cat > target/doc/index.html <<EOF
           <!doctype html>
           <html><head>
-            <meta http-equiv="refresh" content="0; URL='xstd/'" />
+            <meta http-equiv="refresh" content="0; URL='xstd/index.html'" />
           </head></html>
           EOF
 
