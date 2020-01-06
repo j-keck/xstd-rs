@@ -19,7 +19,7 @@ impl Unlines for Vec<&str> {
     fn unlines(&self) -> String {
         self.iter()
             .intersperse(&"\n")
-            .map(|str| str.to_string())
+            .map(|str| (*str).to_string())
             .collect()
     }
 }
@@ -43,7 +43,7 @@ impl Unwords for Vec<&str> {
     fn unwords(&self) -> String {
         self.iter()
             .intersperse(&" ")
-            .map(|str| str.to_string())
+            .map(|str| (*str).to_string())
             .collect()
     }
 }

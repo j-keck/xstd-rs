@@ -68,7 +68,7 @@ where
 {
     type Item = I::Item;
     fn next(&mut self) -> Option<Self::Item> {
-        if let Some(_) = self.cur {
+        if self.cur.is_some() {
             self.prev = self.cur.take();
         }
 
