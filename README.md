@@ -17,7 +17,7 @@ API doc: https://j-keck.github.io/xstd-rs/
 Add `xstd` to the dependencies section in your `Cargo.toml`
 
     [dependencies]
-    xstd = "0.1"
+    xstd = "0.2"
 
 Import everything:
 
