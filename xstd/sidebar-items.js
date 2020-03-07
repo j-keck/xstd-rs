@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["ifte","if, then, else `use xstd::prelude::*; assert_eq!(1, ifte!( true, 1, 2)); assert_eq!(2, ifte!(false, 1, 2));`"]],"mod":[["dynamic","reflection"],["iter","iterator"],["macros","macros"],["prelude","use the `prelude` to import all extensions `use xstd::prelude::*;`"],["stream","streams"],["vec","vector"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["IntersperseIter","Intersperse the given element between the elements of the Iterator."],["MementoIter","Iterator with memory. Knows the actual and previous elements."]],"trait":[["IntersperseIterAdapter",""],["MementoIterAdapter",""]]});

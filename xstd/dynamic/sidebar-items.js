@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["IsInstanceOf","provides `is_instance_of::<T>()` for types which are implement `std::any::Any`."]]});
